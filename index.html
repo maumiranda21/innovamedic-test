@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Innova Medic | Medicina Regenerativa y del Dolor en La Molina – Sin Cirugía</title>
+  <meta name="description" content="Centro médico en La Molina especializado en ozonoterapia, medicina regenerativa y del dolor. Recupera movimiento y reduce el dolor sin cirugía cuando sea médicamente viable. Atención personalizada para hombros, rodillas, columna y cadera.">
+  <meta name="keywords" content="ozonoterapia La Molina, medicina regenerativa Lima, medicina del dolor La Molina, PRP Lima, evitar cirugía rodilla, dolor de columna sin cirugía, Innova Medic">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Innova Medic | Recupera movimiento sin cirugía en La Molina">
+  <meta property="og:description" content="Tratamientos personalizados de medicina regenerativa, ozonoterapia y medicina del dolor. Para quienes quieren volver a caminar, dormir y vivir sin miedo a la cirugía.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_PE">
+  <link rel="canonical" href="https://innovamedic.pe/">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#f0f7ff', 100: '#e0effe', 200: '#bae0fd', 300: '#7cc8fb',
+              400: '#36aaf5', 500: '#0c8ee6', 600: '#0070c4', 700: '#0159a0',
+              800: '#064b84', 900: '#0a3f6e', 950: '#072849',
+            },
+            accent: {
+              50: '#fffbeb', 100: '#fef3c7', 200: '#fde68a', 300: '#fcd34d',
+              400: '#fbbf24', 500: '#f59e0b', 600: '#d97706', 700: '#b45309',
+              800: '#92400e', 900: '#78350f',
+            }
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    
+    .header-glass {
+      background: rgba(7, 40, 73, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    
+    .hero-overlay {
+      background: 
+        linear-gradient(160deg, rgba(7, 40, 73, 0.94) 0%, rgba(10, 63, 110, 0.82) 45%, rgba(7, 40, 73, 0.9) 100%),
+        radial-gradient(ellipse 80% 50% at 70% 40%, rgba(245, 158, 11, 0.12) 0%, transparent 60%);
+    }
+    
+    /* Organic dot textures */
+    .texture-dots {
+      background-image: 
+        radial-gradient(rgba(10, 63, 110, 0.09) 1.1px, transparent 1.1px),
+        radial-gradient(rgba(10, 63, 110, 0.05) 0.8px, transparent 0.8px);
+      background-size: 28px 28px, 18px 18px;
+      background-position: 0 0, 12px 9px;
+    }
+    .texture-dots-dark {
+      background-image: 
+        radial-gradient(rgba(255,255,255,0.09) 1.2px, transparent 1.2px),
+        radial-gradient(rgba(255,255,255,0.045) 0.9px, transparent 0.9px);
+      background-size: 32px 32px, 19px 19px;
+      background-position: 0 0, 14px 11px;
+    }
+    .texture-grid {
+      background-image: 
+        linear-gradient(rgba(10, 63, 110, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(10, 63, 110, 0.035) 1px, transparent 1px);
+      background-size: 42px 42px;
+    }
+    
+    /* Subtle organic drift on dark sections (very soft) */
+    @keyframes dots-drift {
+      0% { background-position: 0 0, 14px 11px; }
+      100% { background-position: 18px 12px, 32px 23px; }
+    }
+    .texture-dots-dark.animated {
+      animation: dots-drift 28s linear infinite;
+    }
+    
+    .treatment-card {
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .treatment-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 22px 44px -14px rgba(7, 40, 73, 0.18);
+    }
+    
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .wa-float {
+      animation: pulse-wa 2.5s infinite;
+    }
+    @keyframes pulse-wa {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+      50% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+    }
+    
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #0a3f6e; border-radius: 4px; }
+    
+    .modal-backdrop {
+      background: rgba(7, 40, 73, 0.72);
+      backdrop-filter: blur(5px);
+    }
+    
+    /* Body part image fade (clean medical style) */
+    .body-visual {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, #f1f5f9 0%, #f8fafc 100%);
+    }
+    .body-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      mix-blend-mode: multiply;
+      opacity: 0.92;
+    }
+    .body-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, 
+        transparent 20%, 
+        rgba(248,250,252,0.4) 55%, 
+        rgba(248,250,252,0.92) 82%, 
+        #f8fafc 100%);
+      pointer-events: none;
+    }
+    
+    /* Soft gradient blobs */
+    .blob-accent {
+      background: radial-gradient(circle, rgba(245,158,11,0.15) 0%, transparent 70%);
+    }
+    .blob-primary {
+      background: radial-gradient(circle, rgba(12,142,230,0.12) 0%, transparent 70%);
+    }
+  </style>
+</head>
+<body class="bg-white text-slate-800 antialiased">
+
+  <!-- HEADER -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 header-glass transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="#inicio" class="flex items-center gap-2.5 group">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+            <span class="text-white font-bold text-lg">IM</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-white font-bold text-lg leading-tight tracking-tight">Innova Medic</span>
+            <span class="text-primary-200 text-[10px] md:text-xs font-medium tracking-wide">La Molina · Medicina Regenerativa</span>
+          </div>
+        </a>
+        
+        <nav class="hidden lg:flex items-center gap-1">
+          <a href="#inicio" class="px-3 py-2 text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition">Inicio</a>
+          <a href="#tratamientos" class="px-3 py-2 text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition">Tratamientos</a>
+          <a href="#proceso" class="px-3 py-2 text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition">Cómo funciona</a>
+          <a href="#resultados" class="px-3 py-2 text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition">Resultados</a>
+          <a href="#especialidades" class="px-3 py-2 text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition">Especialidades</a>
+          <a href="#contacto" class="px-3 py-2 text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition">Contacto</a>
+        </nav>
+        
+        <div class="flex items-center gap-3">
+          <a href="#agendar" class="hidden sm:inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-white font-semibold text-sm px-5 py-2.5 rounded-full shadow-lg shadow-accent-500/30 transition-all hover:scale-105">
+            <i data-lucide="calendar-check" class="w-4 h-4"></i>
+            Agenda tu evaluación
+          </a>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-white hover:bg-white/10 rounded-lg" aria-label="Menú">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div id="mobile-menu" class="hidden lg:hidden bg-primary-950 border-t border-white/10">
+      <div class="px-4 py-4 space-y-1">
+        <a href="#inicio" class="block px-4 py-3 text-white/90 hover:bg-white/10 rounded-lg font-medium">Inicio</a>
+        <a href="#tratamientos" class="block px-4 py-3 text-white/90 hover:bg-white/10 rounded-lg font-medium">Tratamientos</a>
+        <a href="#proceso" class="block px-4 py-3 text-white/90 hover:bg-white/10 rounded-lg font-medium">Cómo funciona</a>
+        <a href="#resultados" class="block px-4 py-3 text-white/90 hover:bg-white/10 rounded-lg font-medium">Resultados</a>
+        <a href="#especialidades" class="block px-4 py-3 text-white/90 hover:bg-white/10 rounded-lg font-medium">Especialidades</a>
+        <a href="#contacto" class="block px-4 py-3 text-white/90 hover:bg-white/10 rounded-lg font-medium">Contacto</a>
+        <a href="#agendar" class="mt-2 flex items-center justify-center gap-2 bg-accent-500 text-white font-semibold px-5 py-3 rounded-full">
+          <i data-lucide="calendar-check" class="w-4 h-4"></i>
+          Agenda tu evaluación
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="inicio" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <div class="absolute inset-0">
+      <img 
+        src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1920&q=80" 
+        alt="Atención médica profesional" 
+        class="w-full h-full object-cover"
+      >
+      <div class="absolute inset-0 hero-overlay"></div>
+      <!-- Subtle texture overlay -->
+      <div class="absolute inset-0 texture-dots-dark animated opacity-50"></div>
+    </div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <div class="max-w-3xl">
+        <p class="text-accent-400 font-semibold text-sm md:text-base tracking-wide mb-4 reveal">
+          La Molina · Medicina regenerativa y del dolor
+        </p>
+        
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-[3.75rem] font-extrabold text-white leading-[1.08] tracking-tight mb-6 reveal">
+          Recupera movimiento.<br>
+          <span class="text-accent-400">Reduce el dolor.</span><br>
+          Sin cirugía cuando sea posible.
+        </h1>
+        
+        <p class="text-lg md:text-xl text-primary-100 leading-relaxed mb-8 max-w-2xl reveal">
+          Tratamos el dolor de hombros, rodillas, columna y cadera con medicina regenerativa y ozonoterapia. Para que vuelvas a caminar, dormir y vivir con independencia.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 reveal">
+          <a href="#agendar" class="inline-flex items-center justify-center gap-2 bg-accent-500 hover:bg-accent-600 text-white font-bold text-base px-8 py-4 rounded-full shadow-xl shadow-accent-500/40 transition-all hover:scale-105">
+            <i data-lucide="calendar-check" class="w-5 h-5"></i>
+            Agenda tu evaluación
+          </a>
+          <a href="https://wa.link/kef7yp" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-semibold text-base px-8 py-4 rounded-full transition-all">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            Escríbenos por WhatsApp
+          </a>
+        </div>
+        
+        <div class="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 text-primary-200 text-sm reveal">
+          <div class="flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4 text-accent-400"></i>
+            <span>Av. Javier Prado Este 6355, La Molina</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="shield-check" class="w-4 h-4 text-accent-400"></i>
+            <span>Evaluación médica personalizada</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 animate-bounce hidden md:block">
+      <i data-lucide="chevron-down" class="w-6 h-6"></i>
+    </div>
+  </section>
+
+  <!-- PROBLEMAS -->
+  <section id="problemas" class="relative py-20 md:py-28 bg-slate-50 overflow-hidden">
+    <div class="absolute inset-0 texture-dots opacity-60"></div>
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] blob-primary opacity-50 -translate-y-1/3 translate-x-1/4 pointer-events-none"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14 reveal">
+        <span class="inline-block text-accent-600 font-semibold text-sm tracking-wide uppercase mb-3">¿Te duele y no quieres operarte?</span>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary-950 leading-tight mb-5">
+          Sabemos lo que estás viviendo
+        </h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          El dolor crónico no solo duele: te roba sueño, independencia y las cosas que amas. Trabajamos para devolverte movimiento de forma responsable y personalizada.
+        </p>
+      </div>
+      
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Hombro -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100/80 treatment-card reveal">
+          <div class="body-visual h-36 bg-gradient-to-br from-primary-100 to-primary-50">
+            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=600&q=80" alt="Hombro y movilidad" class="opacity-90">
+          </div>
+          <div class="p-5 pt-4">
+            <h3 class="text-xl font-bold text-primary-950 mb-2">Hombros</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-3">
+              Tendinitis, bursitis, manguito rotador o artrosis que limitan el movimiento y el sueño.
+            </p>
+            <p class="text-primary-700 font-medium text-sm">→ Volver a peinarte, vestirte y abrazar sin dolor.</p>
+          </div>
+        </div>
+        
+        <!-- Rodillas -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100/80 treatment-card reveal">
+          <div class="body-visual h-36 bg-gradient-to-br from-accent-50 to-primary-50">
+            <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=600&q=80" alt="Rodilla y articulación" class="opacity-90">
+          </div>
+          <div class="p-5 pt-4">
+            <h3 class="text-xl font-bold text-primary-950 mb-2">Rodillas</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-3">
+              Artrosis, meniscos o dolor al subir escaleras y caminar distancias cotidianas.
+            </p>
+            <p class="text-primary-700 font-medium text-sm">→ Caminar y subir escaleras sin miedo.</p>
+          </div>
+        </div>
+        
+        <!-- Columna -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100/80 treatment-card reveal">
+          <div class="body-visual h-36 bg-gradient-to-br from-primary-100 to-slate-100">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=80" alt="Columna y espalda" class="opacity-90">
+          </div>
+          <div class="p-5 pt-4">
+            <h3 class="text-xl font-bold text-primary-950 mb-2">Columna</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-3">
+              Hernias, discopatías, lumbalgia o ciática que condicionan cada movimiento.
+            </p>
+            <p class="text-primary-700 font-medium text-sm">→ Sentarte y moverte con más libertad.</p>
+          </div>
+        </div>
+        
+        <!-- Cadera -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100/80 treatment-card reveal">
+          <div class="body-visual h-36 bg-gradient-to-br from-accent-50 to-primary-50">
+            <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&q=80" alt="Cadera y movilidad" class="opacity-90">
+          </div>
+          <div class="p-5 pt-4">
+            <h3 class="text-xl font-bold text-primary-950 mb-2">Cadera</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-3">
+              Artrosis o bursitis que aparece al caminar o al cambiar de posición.
+            </p>
+            <p class="text-primary-700 font-medium text-sm">→ Recuperar autonomía y calidad de vida.</p>
+          </div>
+        </div>
+      </div>
+      
+      <p class="text-center text-slate-500 text-sm mt-10 max-w-2xl mx-auto reveal">
+        Cada caso es diferente. No todos los dolores se resuelven sin cirugía, pero en muchos pacientes es posible retrasarla o evitarla con un enfoque regenerativo bien indicado.
+      </p>
+    </div>
+  </section>
+
+  <!-- TRATAMIENTOS -->
+  <section id="tratamientos" class="relative py-20 md:py-28 bg-white overflow-hidden">
+    <div class="absolute inset-0 texture-grid opacity-70"></div>
+    <div class="absolute bottom-0 left-0 w-[420px] h-[420px] blob-accent opacity-60 -translate-x-1/3 translate-y-1/4 pointer-events-none"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14 reveal">
+        <span class="inline-block text-accent-600 font-semibold text-sm tracking-wide uppercase mb-3">Nuestros tratamientos</span>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary-950 leading-tight mb-5">
+          Alternativas reales para recuperar tu vida
+        </h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          Combinamos técnicas mínimamente invasivas orientadas a reducir el dolor, favorecer la regeneración de tejidos y mejorar tu función. Siempre bajo evaluación médica.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-7">
+        <!-- Ozonoterapia -->
+        <div class="group relative bg-gradient-to-br from-primary-50 via-white to-primary-50/30 rounded-3xl p-7 md:p-8 border border-primary-100/80 treatment-card reveal overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-primary-100/40 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
+          <div class="relative flex items-start gap-5">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary-600 to-primary-800 flex items-center justify-center flex-shrink-0 shadow-lg shadow-primary-700/25">
+              <i data-lucide="wind" class="w-7 h-7 text-white"></i>
+            </div>
+            <div>
+              <h3 class="text-xl md:text-2xl font-bold text-primary-950 mb-2">Ozonoterapia</h3>
+              <p class="text-slate-600 leading-relaxed mb-4 text-[15px]">
+                Aplicación controlada de ozono médico para disminuir inflamación, mejorar oxigenación local y aliviar el dolor en articulaciones y columna.
+              </p>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-500 mt-0.5 flex-shrink-0"></i>
+                  <span><strong class="text-primary-800">Resuelve:</strong> dolor e inflamación crónica en articulaciones y columna.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-500 mt-0.5 flex-shrink-0"></i>
+                  <span><strong class="text-primary-800">Te aleja de:</strong> depender solo de analgésicos sin una estrategia clara.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-500 mt-0.5 flex-shrink-0"></i>
+                  <span><strong class="text-primary-800">Te acerca a:</strong> mayor movilidad y menos dolor en tu rutina.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Medicina Regenerativa -->
+        <div class="group relative bg-gradient-to-br from-accent-50 via-white to-accent-50/40 rounded-3xl p-7 md:p-8 border border-accent-100/80 treatment-card reveal overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-accent-200/30 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
+          <div class="relative flex items-start gap-5">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-accent-500/30">
+              <i data-lucide="sparkles" class="w-7 h-7 text-white"></i>
+            </div>
+            <div>
+              <h3 class="text-xl md:text-2xl font-bold text-primary-950 mb-2">Medicina Regenerativa</h3>
+              <p class="text-slate-600 leading-relaxed mb-4 text-[15px]">
+                PRP, proloterapia y terapias biológicas que buscan estimular los mecanismos naturales de reparación de tejidos dañados.
+              </p>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-500 mt-0.5 flex-shrink-0"></i>
+                  <span><strong class="text-primary-800">Resuelve:</strong> lesiones crónicas y degenerativas en tendones y articulaciones.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-500 mt-0.5 flex-shrink-0"></i>
+                  <span><strong class="text-primary-800">Te aleja de:</strong> la sensación de que “ya no hay nada más que hacer”.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-500 mt-0.5 flex-shrink-0"></i>
+                  <span><strong class="text-primary-800">Te acerca a:</strong> una opción intermedia seria entre lo conservador y la cirugía.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Medicina del Dolor -->
+        <div class="group relative bg-gradient-to-br from-primary-50 via-white to-primary-50/30 rounded-3xl p-7 md:p-8 border border-primary-100/80 treatment-card reveal overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-primary-100/40 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
+          <div class="relative flex items-start gap-5">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary-600 to-primary-800 flex items-center justify-center flex-shrink-0 shadow-lg shadow-primary-700/25">
+              <i data-lucide="heart-pulse" class="w-7 h-7 text-white"></i>
+            </div>
+            <div>
+              <h3 class="text-xl md:text-2xl font-bold text-primary-950 mb-2">Medicina del Dolor</h3>
+              <p class="text-slate-600 leading-relaxed mb-4 text-[15px]">
+                Enfoque intervencionista y farmacológico orientado a controlar el dolor de forma precisa y mejorar tu capacidad funcional.
+              </p>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-500 mt-0.5 flex-shrink-0"></i>
+                  <span><strong class="text-primary-800">Resuelve:</strong> dolor que limita sueño, ánimo y actividades cotidianas.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-500 mt-0.5 flex-shrink-0"></i>
+                  <span><strong class="text-primary-800">Te aleja de:</strong> vivir medicado de forma crónica sin plan claro.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-500 mt-0.5 flex-shrink-0"></i>
+                  <span><strong class="text-primary-800">Te acerca a:</strong> dormir mejor y recuperar control sobre tu día.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Rehabilitación -->
+        <div class="group relative bg-gradient-to-br from-accent-50 via-white to-accent-50/40 rounded-3xl p-7 md:p-8 border border-accent-100/80 treatment-card reveal overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-accent-200/30 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
+          <div class="relative flex items-start gap-5">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-accent-500/30">
+              <i data-lucide="dumbbell" class="w-7 h-7 text-white"></i>
+            </div>
+            <div>
+              <h3 class="text-xl md:text-2xl font-bold text-primary-950 mb-2">Terapia Física y Rehabilitación</h3>
+              <p class="text-slate-600 leading-relaxed mb-4 text-[15px]">
+                Programas personalizados para consolidar resultados, devolver fuerza, estabilidad y confianza al movimiento.
+              </p>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-500 mt-0.5 flex-shrink-0"></i>
+                  <span><strong class="text-primary-800">Resuelve:</strong> debilidad, rigidez y miedo al movimiento.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-500 mt-0.5 flex-shrink-0"></i>
+                  <span><strong class="text-primary-800">Te aleja de:</strong> quedarte “a medias” después de un procedimiento.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-500 mt-0.5 flex-shrink-0"></i>
+                  <span><strong class="text-primary-800">Te acerca a:</strong> volver a hacer lo que te gusta con más seguridad.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-12 text-center reveal">
+        <p class="text-slate-500 text-sm max-w-2xl mx-auto mb-6">
+          Los resultados varían según cada persona, la condición de base y el cumplimiento del plan. Toda indicación requiere evaluación médica previa.
+        </p>
+        <a href="#agendar" class="inline-flex items-center gap-2 bg-primary-800 hover:bg-primary-900 text-white font-semibold px-7 py-3.5 rounded-full transition-all">
+          Quiero saber si es para mí
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section id="proceso" class="relative py-20 md:py-28 bg-primary-950 text-white overflow-hidden">
+    <div class="absolute inset-0 texture-dots-dark animated opacity-55"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent-500/5 rounded-full blur-3xl pointer-events-none"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <span class="inline-block text-accent-400 font-semibold text-sm tracking-wide uppercase mb-3">Proceso claro y humano</span>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-5">
+          Cómo es el camino contigo
+        </h2>
+        <p class="text-lg text-primary-200 leading-relaxed">
+          Sin complicaciones innecesarias. Un proceso transparente desde el primer contacto hasta el seguimiento.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-4 gap-8 relative">
+        <div class="hidden md:block absolute top-16 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-primary-600 to-transparent"></div>
+        
+        <div class="relative text-center reveal">
+          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-accent-400 to-accent-600 text-primary-950 font-bold text-xl flex items-center justify-center mx-auto mb-5 shadow-lg shadow-accent-500/30 relative z-10">1</div>
+          <h3 class="text-lg font-bold mb-2">Contacto y agenda</h3>
+          <p class="text-primary-200 text-sm leading-relaxed">
+            Nos escribes por WhatsApp o agendas desde la web. Te confirmamos disponibilidad.
+          </p>
+        </div>
+        
+        <div class="relative text-center reveal">
+          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-accent-400 to-accent-600 text-primary-950 font-bold text-xl flex items-center justify-center mx-auto mb-5 shadow-lg shadow-accent-500/30 relative z-10">2</div>
+          <h3 class="text-lg font-bold mb-2">Evaluación médica</h3>
+          <p class="text-primary-200 text-sm leading-relaxed">
+            Valoración completa, antecedentes e imágenes. Ecografía cuando sea necesario.
+          </p>
+        </div>
+        
+        <div class="relative text-center reveal">
+          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-accent-400 to-accent-600 text-primary-950 font-bold text-xl flex items-center justify-center mx-auto mb-5 shadow-lg shadow-accent-500/30 relative z-10">3</div>
+          <h3 class="text-lg font-bold mb-2">Plan personalizado</h3>
+          <p class="text-primary-200 text-sm leading-relaxed">
+            Te explicamos opciones realistas. Tú decides con información clara.
+          </p>
+        </div>
+        
+        <div class="relative text-center reveal">
+          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-accent-400 to-accent-600 text-primary-950 font-bold text-xl flex items-center justify-center mx-auto mb-5 shadow-lg shadow-accent-500/30 relative z-10">4</div>
+          <h3 class="text-lg font-bold mb-2">Tratamiento y seguimiento</h3>
+          <p class="text-primary-200 text-sm leading-relaxed">
+            Aplicamos el plan y te acompañamos en la evolución.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTADOS -->
+  <section id="resultados" class="relative py-20 md:py-28 bg-slate-50 overflow-hidden">
+    <div class="absolute inset-0 texture-dots opacity-50"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14 reveal">
+        <span class="inline-block text-accent-600 font-semibold text-sm tracking-wide uppercase mb-3">Resultados y confianza</span>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary-950 leading-tight mb-5">
+          Lo que buscan quienes confían en nosotros
+        </h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          Espacio preparado para testimonios reales y casos (con consentimiento) que muestran el cambio que buscamos: más movimiento, menos dolor, más vida.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mb-14">
+        <div class="bg-white/80 backdrop-blur rounded-2xl p-5 text-center shadow-sm border border-slate-100 reveal">
+          <div class="text-3xl md:text-4xl font-extrabold text-primary-800 mb-1">40+</div>
+          <p class="text-slate-500 text-sm font-medium">Años promedio de pacientes</p>
+        </div>
+        <div class="bg-white/80 backdrop-blur rounded-2xl p-5 text-center shadow-sm border border-slate-100 reveal">
+          <div class="text-3xl md:text-4xl font-extrabold text-primary-800 mb-1">La Molina</div>
+          <p class="text-slate-500 text-sm font-medium">Ubicación de fácil acceso</p>
+        </div>
+        <div class="bg-white/80 backdrop-blur rounded-2xl p-5 text-center shadow-sm border border-slate-100 reveal">
+          <div class="text-3xl md:text-4xl font-extrabold text-primary-800 mb-1">4</div>
+          <p class="text-slate-500 text-sm font-medium">Enfoques combinados</p>
+        </div>
+        <div class="bg-white/80 backdrop-blur rounded-2xl p-5 text-center shadow-sm border border-slate-100 reveal">
+          <div class="text-3xl md:text-4xl font-extrabold text-primary-800 mb-1">1:1</div>
+          <p class="text-slate-500 text-sm font-medium">Atención personalizada</p>
+        </div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 reveal">
+          <div class="flex items-center gap-1 mb-4 text-accent-400">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-5 italic">
+            “Espacio reservado para testimonio real de paciente con dolor de rodilla que recuperó movilidad. Se incluirá con consentimiento informado.”
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center text-primary-700 font-bold text-sm">P</div>
+            <div>
+              <p class="font-semibold text-primary-950 text-sm">Paciente · 58 años</p>
+              <p class="text-slate-400 text-xs">Rodilla · La Molina</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 reveal">
+          <div class="flex items-center gap-1 mb-4 text-accent-400">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-5 italic">
+            “Espacio para testimonio de paciente con lumbalgia crónica que mejoró calidad de sueño y actividad diaria.”
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center text-primary-700 font-bold text-sm">P</div>
+            <div>
+              <p class="font-semibold text-primary-950 text-sm">Paciente · 62 años</p>
+              <p class="text-slate-400 text-xs">Columna · Surco</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 reveal">
+          <div class="flex items-center gap-1 mb-4 text-accent-400">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-5 italic">
+            “Espacio para caso de hombro con limitación funcional que mejoró con enfoque combinado regenerativo + rehabilitación.”
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center text-primary-700 font-bold text-sm">P</div>
+            <div>
+              <p class="font-semibold text-primary-950 text-sm">Paciente · 51 años</p>
+              <p class="text-slate-400 text-xs">Hombro · San Borja</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <p class="text-center text-slate-400 text-xs mt-8 reveal">
+        Los testimonios reales se incorporarán únicamente con autorización escrita del paciente y respetando la normativa de protección de datos.
+      </p>
+    </div>
+  </section>
+
+  <!-- ESPECIALIDADES -->
+  <section id="especialidades" class="py-20 md:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+        <span class="inline-block text-accent-600 font-semibold text-sm tracking-wide uppercase mb-3">Más allá del dolor</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-primary-950 leading-tight mb-4">
+          Especialidades complementarias
+        </h2>
+        <p class="text-lg text-slate-600">Un abordaje integral cuando tu caso lo requiere.</p>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
+        <div class="bg-slate-50 rounded-2xl p-5 text-center border border-slate-100 hover:border-primary-200 hover:bg-primary-50/50 transition reveal">
+          <i data-lucide="scan" class="w-8 h-8 text-primary-700 mx-auto mb-3"></i>
+          <h3 class="font-semibold text-primary-950 text-sm">Ecografía musculoesquelética</h3>
+        </div>
+        <div class="bg-slate-50 rounded-2xl p-5 text-center border border-slate-100 hover:border-primary-200 hover:bg-primary-50/50 transition reveal">
+          <i data-lucide="stethoscope" class="w-8 h-8 text-primary-700 mx-auto mb-3"></i>
+          <h3 class="font-semibold text-primary-950 text-sm">Reumatología</h3>
+        </div>
+        <div class="bg-slate-50 rounded-2xl p-5 text-center border border-slate-100 hover:border-primary-200 hover:bg-primary-50/50 transition reveal">
+          <i data-lucide="heart" class="w-8 h-8 text-primary-700 mx-auto mb-3"></i>
+          <h3 class="font-semibold text-primary-950 text-sm">Cardiología</h3>
+        </div>
+        <div class="bg-slate-50 rounded-2xl p-5 text-center border border-slate-100 hover:border-primary-200 hover:bg-primary-50/50 transition reveal">
+          <i data-lucide="activity" class="w-8 h-8 text-primary-700 mx-auto mb-3"></i>
+          <h3 class="font-semibold text-primary-950 text-sm">Medicina deportiva</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN -->
+  <section id="ubicacion" class="relative py-20 md:py-28 bg-slate-50 overflow-hidden">
+    <div class="absolute inset-0 texture-dots opacity-40"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <span class="inline-block text-accent-600 font-semibold text-sm tracking-wide uppercase mb-3">Encuéntranos</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-primary-950 leading-tight mb-6">
+            En el corazón de La Molina
+          </h2>
+          <p class="text-slate-600 leading-relaxed mb-8">
+            Av. Javier Prado Este 6355, Urb. La Riviera de Monterrico, La Molina. Fácil acceso desde Surco, San Borja, Ate y zonas aledañas.
+          </p>
+          
+          <div class="space-y-4 mb-8">
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="map-pin" class="w-5 h-5 text-primary-700"></i>
+              </div>
+              <div>
+                <p class="font-semibold text-primary-950">Dirección</p>
+                <p class="text-slate-600 text-sm">Av. Javier Prado Este 6355, La Molina, Lima</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="phone" class="w-5 h-5 text-primary-700"></i>
+              </div>
+              <div>
+                <p class="font-semibold text-primary-950">Teléfonos</p>
+                <p class="text-slate-600 text-sm">966 323 927 · (01) 696 9080</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="clock" class="w-5 h-5 text-primary-700"></i>
+              </div>
+              <div>
+                <p class="font-semibold text-primary-950">Horario orientativo</p>
+                <p class="text-slate-600 text-sm">Consulta disponibilidad al agendar. Atención de lunes a sábado.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white border border-primary-100 rounded-2xl p-5 shadow-sm">
+            <h3 class="font-bold text-primary-950 mb-2 flex items-center gap-2">
+              <i data-lucide="shield-check" class="w-5 h-5 text-accent-500"></i>
+              Por qué elegirnos
+            </h3>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-500 mt-0.5"></i> Enfoque combinado: regeneración + dolor + rehabilitación</li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-500 mt-0.5"></i> Ubicación privilegiada en La Molina</li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-500 mt-0.5"></i> Comunicación clara y sin promesas vacías</li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-500 mt-0.5"></i> Evaluación médica seria antes de cualquier procedimiento</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="reveal">
+          <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-200 aspect-[4/3] relative">
+            <iframe 
+              src="https://maps.google.com/maps?q=Av.+Javier+Prado+Este+6355,+La+Molina,+Lima,+Peru&hl=es&z=16&output=embed" 
+              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade" class="absolute inset-0"
+              title="Ubicación Innova Medic La Molina">
+            </iframe>
+            <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur rounded-xl p-3 shadow-md">
+              <p class="font-semibold text-primary-950 text-sm">Innova Medic</p>
+              <p class="text-slate-500 text-xs">Av. Javier Prado Este 6355, La Molina</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENDAR -->
+  <section id="agendar" class="relative py-20 md:py-28 bg-primary-950 text-white overflow-hidden">
+    <div class="absolute inset-0 texture-dots-dark animated opacity-50"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <div class="reveal">
+          <span class="inline-block text-accent-400 font-semibold text-sm tracking-wide uppercase mb-3">Da el primer paso</span>
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-5">
+            Agenda tu evaluación
+          </h2>
+          <p class="text-primary-200 text-lg leading-relaxed mb-6">
+            Cuéntanos qué te duele y cuándo te conviene. Te confirmamos por WhatsApp. Sin compromiso de tratamiento.
+          </p>
+          
+          <div class="space-y-3 mb-8">
+            <div class="flex items-center gap-3 text-primary-100">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-accent-400"></i>
+              <span>Evaluación médica personalizada</span>
+            </div>
+            <div class="flex items-center gap-3 text-primary-100">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-accent-400"></i>
+              <span>Explicación clara de opciones realistas</span>
+            </div>
+            <div class="flex items-center gap-3 text-primary-100">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-accent-400"></i>
+              <span>Confirmación rápida por WhatsApp</span>
+            </div>
+          </div>
+          
+          <a href="https://wa.link/kef7yp" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold px-7 py-4 rounded-full shadow-lg transition-all hover:scale-105">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            Preferimos WhatsApp ahora
+          </a>
+        </div>
+        
+        <div class="bg-white rounded-3xl p-6 md:p-8 text-slate-800 shadow-2xl reveal">
+          <h3 class="text-xl font-bold text-primary-950 mb-1">Solicita tu cita</h3>
+          <p class="text-slate-500 text-sm mb-6">Te confirmamos por WhatsApp. Fechas sujetas a disponibilidad.</p>
+          
+          <form id="appointment-form" class="space-y-4">
+            <div>
+              <label for="name" class="block text-sm font-medium text-slate-700 mb-1.5">Nombre completo *</label>
+              <input type="text" id="name" name="name" required placeholder="Tu nombre" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition text-sm">
+            </div>
+            <div>
+              <label for="phone" class="block text-sm font-medium text-slate-700 mb-1.5">Teléfono / WhatsApp *</label>
+              <input type="tel" id="phone" name="phone" required placeholder="9XX XXX XXX" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition text-sm">
+            </div>
+            <div>
+              <label for="motivo" class="block text-sm font-medium text-slate-700 mb-1.5">Motivo principal *</label>
+              <select id="motivo" name="motivo" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition text-sm bg-white">
+                <option value="">Selecciona una opción</option>
+                <option value="hombro">Dolor de hombro</option>
+                <option value="rodilla">Dolor de rodilla</option>
+                <option value="columna">Dolor de columna / lumbar</option>
+                <option value="cadera">Dolor de cadera</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label for="fecha" class="block text-sm font-medium text-slate-700 mb-1.5">Fecha preferida</label>
+                <input type="date" id="fecha" name="fecha" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition text-sm">
+              </div>
+              <div>
+                <label for="horario" class="block text-sm font-medium text-slate-700 mb-1.5">Horario</label>
+                <select id="horario" name="horario" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition text-sm bg-white">
+                  <option value="">Indiferente</option>
+                  <option value="mañana">Mañana</option>
+                  <option value="tarde">Tarde</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label for="mensaje" class="block text-sm font-medium text-slate-700 mb-1.5">Mensaje (opcional)</label>
+              <textarea id="mensaje" name="mensaje" rows="3" placeholder="Cuéntanos un poco más..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition text-sm resize-none"></textarea>
+            </div>
+            <div class="flex items-start gap-2">
+              <input type="checkbox" id="privacidad" name="privacidad" required class="mt-1 rounded border-slate-300 text-primary-600 focus:ring-primary-500">
+              <label for="privacidad" class="text-xs text-slate-500 leading-relaxed">
+                Acepto la <button type="button" onclick="openModal('privacidad')" class="text-primary-700 underline hover:text-primary-900">Política de Tratamiento de Datos Personales</button> y autorizo el contacto para coordinar mi cita.
+              </label>
+            </div>
+            <button type="submit" class="w-full bg-accent-500 hover:bg-accent-600 text-white font-bold py-4 rounded-xl shadow-lg shadow-accent-500/30 transition-all hover:scale-[1.02] flex items-center justify-center gap-2">
+              <i data-lucide="send" class="w-5 h-5"></i>
+              Enviar solicitud de cita
+            </button>
+            <p class="text-center text-xs text-slate-400">Recibirás confirmación por WhatsApp.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contacto" class="bg-primary-950 text-primary-200 pt-16 pb-8 border-t border-primary-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div>
+          <div class="flex items-center gap-2.5 mb-4">
+            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center">
+              <span class="text-white font-bold text-sm">IM</span>
+            </div>
+            <span class="text-white font-bold text-lg">Innova Medic</span>
+          </div>
+          <p class="text-sm leading-relaxed mb-4">
+            Medicina regenerativa y del dolor en La Molina. Recupera movimiento. Reduce el dolor. Sin cirugía cuando sea posible.
+          </p>
+          <div class="flex gap-3">
+            <a href="https://wa.link/kef7yp" target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition" aria-label="WhatsApp">
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+            </a>
+            <a href="tel:+51966323927" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition" aria-label="Teléfono">
+              <i data-lucide="phone" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-semibold mb-4">Contacto</h4>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-start gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4 mt-0.5 flex-shrink-0"></i>
+              <span>Av. Javier Prado Este 6355<br>La Molina, Lima</span>
+            </li>
+            <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 flex-shrink-0"></i><span>966 323 927</span></li>
+            <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 flex-shrink-0"></i><span>(01) 696 9080</span></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-semibold mb-4">Navegación</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#tratamientos" class="hover:text-white transition">Tratamientos</a></li>
+            <li><a href="#proceso" class="hover:text-white transition">Cómo funciona</a></li>
+            <li><a href="#resultados" class="hover:text-white transition">Resultados</a></li>
+            <li><a href="#agendar" class="hover:text-white transition">Agendar cita</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-semibold mb-4">Legal</h4>
+          <ul class="space-y-2 text-sm">
+            <li><button onclick="openModal('terminos')" class="hover:text-white transition text-left">Términos y Condiciones</button></li>
+            <li><button onclick="openModal('privacidad')" class="hover:text-white transition text-left">Política de Datos Personales</button></li>
+            <li><button onclick="openModal('reclamaciones')" class="hover:text-white transition text-left">Libro de Reclamaciones</button></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-primary-800 pt-6 mb-6">
+        <p class="text-xs text-primary-400 leading-relaxed max-w-4xl">
+          <strong class="text-primary-300">Aviso médico importante:</strong> Los resultados de los tratamientos pueden variar según cada paciente, su condición de base, edad, comorbilidades y adherencia al plan terapéutico. Ningún tratamiento garantiza cura definitiva ni ausencia de riesgos. Toda indicación terapéutica requiere evaluación médica previa presencial. La información de este sitio es orientativa y no sustituye la consulta médica profesional.
+        </p>
+      </div>
+      
+      <div class="border-t border-primary-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-primary-400">
+        <p>© 2026 Innova Medic. Todos los derechos reservados.</p>
+        <p>La Molina, Lima, Perú</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WA -->
+  <a href="https://wa.link/kef7yp" target="_blank" rel="noopener" 
+     class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full shadow-xl flex items-center justify-center wa-float transition-transform hover:scale-110"
+     aria-label="Contactar por WhatsApp">
+    <i data-lucide="message-circle" class="w-7 h-7"></i>
+  </a>
+
+  <!-- MODALS - LEGAL -->
+  <!-- TÉRMINOS -->
+  <div id="modal-terminos" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+    <div class="modal-backdrop absolute inset-0" onclick="closeModal('terminos')"></div>
+    <div class="relative bg-white rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl">
+      <div class="sticky top-0 bg-white border-b border-slate-100 px-6 py-4 flex items-center justify-between z-10">
+        <h3 class="text-lg font-bold text-primary-950">Términos y Condiciones</h3>
+        <button onclick="closeModal('terminos')" class="p-2 hover:bg-slate-100 rounded-lg"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+      <div class="px-6 py-5 text-sm text-slate-600 leading-relaxed space-y-4">
+        <p class="text-xs text-slate-400">Última actualización: Noviembre 2026</p>
+        <p>Bienvenido al sitio web de <strong>Innova Medic</strong> (en adelante, el “Sitio Web” o el “Centro”). El acceso y uso del Sitio Web implica la aceptación plena de los presentes Términos y Condiciones. Si no está de acuerdo, deberá abstenerse de utilizarlo.</p>
+        
+        <p><strong>1. Objeto del Sitio Web</strong><br>
+        El Sitio Web tiene como finalidad proporcionar información sobre los servicios médicos de medicina regenerativa, ozonoterapia, medicina del dolor y rehabilitación ofrecidos por el Centro, así como facilitar el contacto y la solicitud de citas. La información publicada es de carácter orientativo y no constituye diagnóstico, tratamiento ni asesoría médica personalizada. Toda decisión terapéutica se toma únicamente tras evaluación médica presencial.</p>
+        
+        <p><strong>2. Uso del Sitio Web</strong><br>
+        El usuario se compromete a utilizar el Sitio Web de forma responsable y conforme a la legislación peruana vigente. Queda prohibido: utilizar el Sitio para fines ilícitos o fraudulentos; realizar actividades que puedan dañar o sobrecargar el funcionamiento del sitio; intentar acceder a áreas restringidas sin autorización; o utilizar la información del sitio para vulnerar derechos de terceros.</p>
+        
+        <p><strong>3. Servicios ofrecidos</strong><br>
+        Los servicios informados en el Sitio incluyen, entre otros: ozonoterapia, medicina regenerativa (PRP, proloterapia y terapias biológicas), medicina del dolor, terapia física y rehabilitación, y especialidades complementarias. La prestación efectiva de cualquier servicio está sujeta a evaluación médica previa, disponibilidad y acuerdos específicos entre el paciente y el Centro.</p>
+        
+        <p><strong>4. Solicitudes de cita</strong><br>
+        El envío de un formulario o mensaje a través del Sitio o de WhatsApp no garantiza la asignación automática de cita. La confirmación se realiza por los canales oficiales del Centro (WhatsApp o teléfono). Las fechas y horarios están sujetos a disponibilidad médica.</p>
+        
+        <p><strong>5. Propiedad intelectual</strong><br>
+        Todos los contenidos del Sitio Web (textos, diseño, logotipos, imágenes y demás materiales) son propiedad de Innova Medic o se utilizan con autorización. Queda prohibida su reproducción, distribución o modificación sin autorización previa y por escrito.</p>
+        
+        <p><strong>6. Limitación de responsabilidad</strong><br>
+        El Centro no garantiza que el Sitio esté libre de errores o interrupciones. No será responsable por daños derivados del uso o imposibilidad de uso del Sitio, errores u omisiones en el contenido, ni por decisiones tomadas por los usuarios basadas únicamente en la información del Sitio Web sin valoración profesional presencial.</p>
+        
+        <p><strong>7. Enlaces a terceros</strong><br>
+        El Sitio puede contener enlaces a páginas de terceros. Innova Medic no tiene control sobre dichos sitios y no asume responsabilidad por sus contenidos, políticas o prácticas.</p>
+        
+        <p><strong>8. Protección de datos personales</strong><br>
+        El tratamiento de datos personales se realiza conforme a la <strong>Política de Tratamiento de Datos Personales</strong> publicada en este Sitio y a la Ley N.º 29733.</p>
+        
+        <p><strong>9. Modificaciones</strong><br>
+        El Centro se reserva el derecho de modificar estos Términos y Condiciones en cualquier momento. Las modificaciones serán publicadas en esta misma página y entrarán en vigor desde su publicación.</p>
+        
+        <p><strong>10. Legislación aplicable</strong><br>
+        Estos Términos se rigen por las leyes de la República del Perú. Para cualquier controversia, las partes se someten a la jurisdicción de los tribunales competentes de Lima, Perú.</p>
+        
+        <p><strong>11. Contacto</strong><br>
+        Innova Medic · Av. Javier Prado Este 6355, La Molina, Lima · Tel. 966 323 927 · WhatsApp: wa.link/kef7yp</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIVACIDAD -->
+  <div id="modal-privacidad" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+    <div class="modal-backdrop absolute inset-0" onclick="closeModal('privacidad')"></div>
+    <div class="relative bg-white rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl">
+      <div class="sticky top-0 bg-white border-b border-slate-100 px-6 py-4 flex items-center justify-between z-10">
+        <h3 class="text-lg font-bold text-primary-950">Política de Tratamiento de Datos Personales</h3>
+        <button onclick="closeModal('privacidad')" class="p-2 hover:bg-slate-100 rounded-lg"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+      <div class="px-6 py-5 text-sm text-slate-600 leading-relaxed space-y-4">
+        <p class="text-xs text-slate-400">Última actualización: Noviembre 2026</p>
+        <p>En cumplimiento de la <strong>Ley N.º 29733</strong>, Ley de Protección de Datos Personales, y su Reglamento, Innova Medic informa a los usuarios del Sitio Web sobre el tratamiento de sus datos personales.</p>
+        
+        <p><strong>1. Responsable del tratamiento</strong><br>
+        Innova Medic (razón social y RUC según registro vigente), con domicilio en Av. Javier Prado Este 6355, La Molina, Lima, Perú. Canales de contacto: 966 323 927 y WhatsApp (wa.link/kef7yp).</p>
+        
+        <p><strong>2. Datos personales que recopilamos</strong><br>
+        Podremos recopilar: nombre y apellidos; número de teléfono / WhatsApp; correo electrónico (si se proporciona); motivo de consulta y preferencias de fecha/horario; datos técnicos de navegación (dirección IP, tipo de navegador, dispositivo); e información adicional que el usuario proporcione voluntariamente en formularios o mensajes.</p>
+        
+        <p><strong>3. Finalidad del tratamiento</strong><br>
+        Los datos se utilizan para: gestionar solicitudes de cita y coordinar atención médica; contactar al solicitante por WhatsApp o teléfono; cumplir obligaciones legales y regulatorias aplicables a establecimientos de salud; mejorar la experiencia del Sitio Web; y, cuando exista consentimiento, enviar comunicaciones relacionadas con los servicios del Centro.</p>
+        
+        <p><strong>4. Base legal</strong><br>
+        El tratamiento se fundamenta en: el consentimiento del titular; la ejecución de medidas precontractuales a solicitud del interesado; el cumplimiento de obligaciones legales; y el interés legítimo del Centro en la prestación adecuada de sus servicios.</p>
+        
+        <p><strong>5. Conservación</strong><br>
+        Los datos se conservarán durante el tiempo necesario para cumplir la finalidad para la cual fueron recopilados, la vigencia de la relación asistencial cuando corresponda, y los plazos exigidos por la legislación aplicable. En el caso de reclamos, se conservarán conforme a los plazos de la normativa de protección al consumidor.</p>
+        
+        <p><strong>6. Confidencialidad y seguridad</strong><br>
+        El Centro implementa medidas técnicas, administrativas y organizativas adecuadas para proteger los datos personales contra acceso no autorizado, pérdida, alteración o divulgación indebida. La información se trata con estricta confidencialidad, acorde a la naturaleza de los servicios de salud.</p>
+        
+        <p><strong>7. Compartición con terceros</strong><br>
+        Innova Medic no vende ni comercializa datos personales. Podrá compartir datos únicamente con: proveedores de servicios tecnológicos necesarios para la operación del Sitio o la comunicación (por ejemplo, plataformas de mensajería); autoridades competentes cuando exista obligación legal; y profesionales o entidades vinculadas directamente a la atención del paciente, cuando sea necesario para la correcta prestación del servicio.</p>
+        
+        <p><strong>8. Derechos del titular (ARCO)</strong><br>
+        El titular puede ejercer sus derechos de acceso, rectificación, cancelación, oposición y revocación del consentimiento. Para ello deberá enviar una solicitud a través de los canales de contacto del Centro, indicando su nombre completo, documento de identificación y el derecho que desea ejercer. Se dará respuesta en los plazos establecidos por la normativa vigente.</p>
+        
+        <p><strong>9. Cookies</strong><br>
+        El Sitio puede utilizar cookies y tecnologías similares para mejorar la experiencia del usuario y analizar el tráfico. El usuario puede configurar su navegador para rechazar cookies; algunas funcionalidades podrían verse afectadas.</p>
+        
+        <p><strong>10. Transferencias internacionales</strong><br>
+        En caso de que los datos se almacenen o traten en servidores ubicados fuera del Perú, el Centro garantizará que dichas transferencias cumplan con la normativa aplicable en materia de protección de datos.</p>
+        
+        <p><strong>11. Modificaciones</strong><br>
+        El Centro se reserva el derecho de modificar esta Política. Las modificaciones se publicarán en esta misma sección, indicando la fecha de actualización.</p>
+        
+        <p><strong>12. Contacto</strong><br>
+        Para consultas sobre esta Política o el ejercicio de derechos: Innova Medic · Av. Javier Prado Este 6355, La Molina · 966 323 927 · WhatsApp: wa.link/kef7yp</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIBRO DE RECLAMACIONES -->
+  <div id="modal-reclamaciones" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+    <div class="modal-backdrop absolute inset-0" onclick="closeModal('reclamaciones')"></div>
+    <div class="relative bg-white rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl">
+      <div class="sticky top-0 bg-white border-b border-slate-100 px-6 py-4 flex items-center justify-between z-10">
+        <h3 class="text-lg font-bold text-primary-950">Libro de Reclamaciones</h3>
+        <button onclick="closeModal('reclamaciones')" class="p-2 hover:bg-slate-100 rounded-lg"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+      <div class="px-6 py-5 text-sm text-slate-600 leading-relaxed space-y-4">
+        <p>Conforme al <strong>Código de Protección y Defensa del Consumidor (Ley N.º 29571)</strong> y normas complementarias, Innova Medic pone a disposición el Libro de Reclamaciones.</p>
+        
+        <p><strong>1. Finalidad</strong><br>
+        Permitir al consumidor registrar una reclamación o queja en virtud de lo dispuesto en la normativa de protección al consumidor.</p>
+        
+        <p><strong>2. Definiciones</strong><br>
+        <em>Reclamación:</em> disconformidad relacionada con los productos o servicios prestados.<br>
+        <em>Queja:</em> malestar o descontento respecto a la atención al público o al trato recibido.</p>
+        
+        <p><strong>3. Identificación del proveedor</strong><br>
+        Nombre comercial: Innova Medic<br>
+        Dirección: Av. Javier Prado Este 6355, La Molina, Lima, Perú<br>
+        Teléfono: 966 323 927<br>
+        Canal de contacto preferente: WhatsApp (wa.link/kef7yp)</p>
+        
+        <p><strong>4. Cómo presentar un reclamo o queja</strong><br>
+        Puede solicitar el Libro de Reclamaciones físico en nuestras instalaciones, o enviar su reclamo/queja por escrito a través de WhatsApp o los canales de contacto oficiales, indicando: datos de identificación y contacto, descripción clara de los hechos, y pretensión (si la hubiera). Recibirá constancia de recepción y respuesta en los plazos establecidos por la normativa vigente.</p>
+        
+        <p><strong>5. Plazo de atención</strong><br>
+        El proveedor deberá atender la reclamación o queja en un plazo no mayor a quince (15) días hábiles, prorrogable por quince (15) días adicionales con justificación, conforme a la normativa aplicable.</p>
+        
+        <p><strong>6. Confidencialidad y protección de datos</strong><br>
+        Los datos personales proporcionados en el marco de un reclamo o queja serán tratados de acuerdo con la Ley N.º 29733 – Ley de Protección de Datos Personales. Se garantiza su confidencialidad, uso exclusivo para la gestión del reclamo/queja y conservación durante el plazo que corresponda según la normativa.</p>
+        
+        <p><strong>7. Consentimiento</strong><br>
+        Al registrar una reclamación o queja, el consumidor declara ser el titular de la información proporcionada y haber leído y aceptado estos términos.</p>
+        
+        <p class="text-xs text-slate-400 pt-2">Este contenido es informativo. El Centro mantiene el Libro de Reclamaciones físico y/o virtual conforme a la normativa peruana vigente (INDECOPI y Código de Protección y Defensa del Consumidor).</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+    
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      mobileBtn.innerHTML = mobileMenu.classList.contains('hidden')
+        ? '<i data-lucide="menu" class="w-6 h-6"></i>'
+        : '<i data-lucide="x" class="w-6 h-6"></i>';
+      lucide.createIcons();
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+        lucide.createIcons();
+      });
+    });
+    
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('shadow-lg', window.scrollY > 50);
+    });
+    
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealElements.forEach(el => revealObserver.observe(el));
+    
+    function openModal(id) {
+      const modal = document.getElementById('modal-' + id);
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      lucide.createIcons();
+    }
+    function closeModal(id) {
+      const modal = document.getElementById('modal-' + id);
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        ['terminos', 'privacidad', 'reclamaciones'].forEach(id => {
+          const m = document.getElementById('modal-' + id);
+          if (m && !m.classList.contains('hidden')) closeModal(id);
+        });
+      }
+    });
+    
+    document.getElementById('appointment-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const motivo = document.getElementById('motivo').value;
+      const fecha = document.getElementById('fecha').value;
+      const horario = document.getElementById('horario').value;
+      const mensaje = document.getElementById('mensaje').value;
+      
+      let text = `Hola, soy ${name}.%0ATeléfono: ${phone}%0AMotivo: ${motivo}%0A`;
+      if (fecha) text += `Fecha preferida: ${fecha}%0A`;
+      if (horario) text += `Horario preferido: ${horario}%0A`;
+      if (mensaje) text += `Mensaje: ${mensaje}%0A`;
+      text += `%0ADeseo agendar una evaluación en Innova Medic.`;
+      
+      window.open(`https://wa.me/51966323927?text=${text}`, '_blank');
+      alert('Te redirigiremos a WhatsApp para confirmar tu solicitud. ¡Gracias!');
+    });
+    
+    const fechaInput = document.getElementById('fecha');
+    if (fechaInput) {
+      fechaInput.setAttribute('min', new Date().toISOString().split('T')[0]);
+    }
+  </script>
+</body>
+</html>
